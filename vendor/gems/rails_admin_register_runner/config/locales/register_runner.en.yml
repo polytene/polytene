@@ -1,0 +1,10 @@
+
+en:
+  admin:
+    actions:
+      register_runner:
+        title: "Register Runner"
+        menu: "Register Runner"
+        breadcrumb: "Register Runner"
+        link: "Register Runner"
+        done: "Runner registered for selected Project"

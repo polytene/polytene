@@ -1,0 +1,11 @@
+
+pl:
+  admin:
+    actions:
+      project_builds:
+        title: "Project Builds"
+        menu: "Builds"
+        breadcrumb: "Project Builds"
+        link: "Project Builds"
+        bulk_link: "Project Builds selected %{model_label_plural}"
+        done: "Project Buildsed"

@@ -1,0 +1,23 @@
+pl:
+  devise:
+    failure:
+      invited: 'Otrzymałeś zaproszenie. Postępuj wg instrukcji aby dokończyć tworzenie konta.'
+    invitations:
+      send_instructions: 'Zaproszenie zostało wysłane na adres %{email}.'
+      invitation_token_invalid: 'Token zaproszenia jest nieprawidłowy!'
+      updated: 'Hasło zostało pomyślnie zapisane.'
+      no_invitations_remaining: "Brak zaproszeń."
+      invitation_removed: 'Zaproszenie zostało usunięte.'
+      new:
+        header: "Wyślij zaproszenie"
+        submit_button: "Wyślij zaproszenie"
+      edit:
+        header: "Ustaw hasło"
+        submit_button: "Ustaw hasło"
+    mailer:
+      invitation_instructions:
+        subject: 'Instrukcje'
+        hello: 'Witaj %{email}'
+        someone_invited_you: 'Otrzymałeś zaproszenie do portalu %{url}. Możesz je zaakceptować używając adresu poniżej.'
+        accept: 'Akceptuj zaproszenie'
+        ignore: "Jeżeli nie jesteś zainteresowany zaproszeniem, po prostu zignoruj tą wiadomość."

@@ -1,0 +1,432 @@
+pl:
+  notifications:
+    deployment_finished:
+      subject: "[Polytene na %{site_domain}] Wdrożenie kompilacji (%{build_name}) zakończone ze statusem: %{deployment_status}"
+  polytene:
+    no_public_builds: 'Nie ma jeszcze żadnych publicznych kompilacji'
+    public_builds_chart_title: 'Publiczne kompilacje'
+    provide_valid_email: 'Wprowadź poprawny adres email'
+    invite: 'Zaproś'
+    build_not_valid_for_deployment: 'Kompilacja nie jest gotowa do wdrożenia. Sprawdź czy istnieje odpowiednia gałąź projektu'
+    no_runner_in_build: 'Projekt do którego ta kompilacja należy nie ma przypisanego runnera'
+    name: "Nazwa"
+    import_projects_header: "Dostępne projekty"
+    if_imported: 'Zaimportowany?'
+    delete_project: 'Usuń projekt'
+    import_project: 'Importuj projekt'
+    no_projects_to_import: 'Brak projektów do zaimportowania'
+    run_deployment_again_btn: "Uruchom ponownie"
+    run_deployment_btn: "Zainicjuj deploy"
+    notices: "Wiadomości"
+    other_places: "Inne miejsca"
+    no_notices: "brak nowych powiadomień"
+    help: 'Pomoc'
+    dashboard: "Kokpit"
+    login: "Zaloguj"
+    home_page: "Strona startowa"
+    waiting_for_deployment_data: "Czekam na wynik deploya"
+    profile_not_fully_defined: "Profil musi być zdefiniowany w całości. Następujące pola są puste: %{blank_required_profile_attributes}. Jeżeli ich nie zdefiniujesz, nie będziesz mógł wykorzystać wszystkich funkcji Polytene"
+    no_projects_notice: "Nie zaimportowałeś żadnych projektów. Możesz to zrobić w karcie 'Importuj projekty'"
+    no_runners_notice: "Nie utworzyłeś żadnych runnerów. Kto ma wykonywać całą pracę?"
+    no_builds_notice: "Wygląda na to, że nie ma żadnych buildów, chociaż zaimportowałeś już jakieś projekty. Pamiętasz aby aktywować webhooki w GitlabCI?"
+  locale:
+    boolean:
+      yes: "Tak"
+      no: "Nie"
+  date:
+    abbr_day_names:
+    - nie
+    - pon
+    - wto
+    - śro
+    - czw
+    - pią
+    - sob
+  abbr_month_names:
+    - sty
+    - lut
+    - mar
+    - kwi
+    - maj
+    - cze
+    - lip
+    - sie
+    - wrz
+    - paź
+    - lis
+    - gru
+  day_names:
+    - niedziela
+    - poniedziałek
+    - wtorek
+    - środa
+    - czwartek
+    - piątek
+    - sobota
+  formats:
+    default: ! '%d-%m-%Y'
+    long: ! '%B %d, %Y'
+    short: ! '%d %b'
+    month_names:
+    - styczeń
+    - luty
+    - marzec
+    - kwiecień
+    - maj
+    - czerwiec
+    - lipiec
+    - sierpień
+    - wrzesień
+    - październik
+    - listopad
+    - grudzień
+  order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: około %{count} godziny
+        many: około %{count} godzin
+        one: około godziny
+        other: około %{count} godzin
+      about_x_months:
+        few: około %{count} miesiące
+        many: około %{count} miesięcy
+        one: około miesiąca
+        other: około %{count} miesięcy
+      about_x_years:
+        few: około %{count} lata
+        many: około %{count} lat
+        one: około rok
+        other: około %{count} lat
+      almost_x_years:
+        few: prawie %{count} lata
+        many: prawie %{count} lat
+        one: prawie rok
+        other: prawie %{count} lat
+      half_a_minute: pół minuty
+      less_than_x_minutes:
+        few: mniej niż %{count} minuty
+        many: mniej niż %{count} minut
+        one: mniej niż minutę
+        other: mniej niż %{count} minut
+      less_than_x_seconds:
+        few: mniej niż %{count} sekundy
+        many: mniej niż %{count} sekund
+        one: mniej niż sekundę
+        other: mniej niż %{count} sekund
+      over_x_years:
+        few: ponad %{count} lata
+        many: ponad %{count} lat
+        one: ponad rok
+        other: ponad %{count} lat
+      x_days:
+        few: ! '%{count} dni'
+        many: ! '%{count} dni'
+        one: 1 dzień
+        other: ! '%{count} dni'
+      x_minutes:
+        few: ! '%{count} minuty'
+        many: ! '%{count} minut'
+        one: 1 minuta
+        other: ! '%{count} minut'
+      x_months:
+        few: ! '%{count} miesiące'
+        many: ! '%{count} miesięcy'
+        one: 1 miesiąc
+        other: ! '%{count} miesięcy'
+      x_seconds:
+        few: ! '%{count} sekundy'
+        many: ! '%{count} sekund'
+        one: 1 sekunda
+        other: ! '%{count} sekund'
+    prompts:
+      day: Dzień
+      hour: Godzina
+      minute: Minuta
+      month: Miesiąc
+      second: Sekundy
+      year: Rok
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: musi zostać zaakceptowane
+      blank: nie może być puste
+      confirmation: ! 'nie zgadza się z polem %{attribute}'
+      empty: nie może być puste
+      equal_to: musi być równe %{count}
+      even: musi być parzyste
+      exclusion: jest zarezerwowane
+      greater_than: musi być większe od %{count}
+      greater_than_or_equal_to: musi być większe lub równe %{count}
+      inclusion: nie znajduje się na liście dopuszczalnych wartości
+      invalid: jest nieprawidłowe
+      less_than: musi być mniejsze od %{count}
+      less_than_or_equal_to: musi być mniejsze lub równe %{count}
+      not_a_number: nie jest liczbą
+      not_an_integer: musi być liczbą całkowitą
+      odd: musi być nieparzyste
+      present: musi być puste
+      record_invalid: ! 'Negatywne sprawdzenie poprawności: %{errors}'
+      restrict_dependent_destroy:
+        many: 'Nie może zostać usunięte, gdyż istnieją zależne od niego %{record}'
+        one: 'Nie może zostać usunięte, gdyż istnieje zależny od niego %{record}'
+      taken: zostało już zajęte
+      too_long:
+        few: jest za długie (maksymalnie %{count} znaki)
+        many: jest za długie (maksymalnie %{count} znaków)
+        one: jest za długie (maksymalnie jeden znak) 
+        other: jest za długie (maksymalnie %{count} znaków)
+      too_short:
+        few: jest za krótkie (przynajmniej %{count} znaki)
+        many: jest za krótkie (przynajmniej %{count} znaków)
+        one: jest za krótkie (przynajmniej jeden znak)
+        other: jest za krótkie (przynajmniej %{count} znaków)
+      wrong_length:
+        few: ma nieprawidłową długość (powinna wynosić %{count} znaki)
+        many: ma nieprawidłową długość (powinna wynosić %{count} znaków)
+        one: ma nieprawidłową długość (powinna wynosić jeden znak)
+        other: ma nieprawidłową długość (powinna wynosić %{count} znaków)
+      other_than: 'musi być inna niż %{count}'
+    template:
+      body: ! 'Błędy dotyczą następujących pól:'
+      header:
+        few: ! '%{model} nie został zachowany z powodu %{count} błędów'
+        many: ! '%{model} nie został zachowany z powodu %{count} błędów'
+        one: ! '%{model} nie został zachowany z powodu jednego błędu'
+        other: ! '%{model} nie został zachowany z powodu %{count} błędów'
+  helpers:
+    select:
+      prompt: Proszę wybrać
+    submit:
+      create: Utwórz %{model}
+      submit: Zapisz %{model}
+      update: Aktualizuj %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%n %u'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: true
+        unit: zł
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Miliard
+          million: Milion
+          quadrillion: Biliard
+          thousand: Tysiąc
+          trillion: Bilion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            few: bajty
+            many: bajtów
+            one: bajt
+            other: bajty
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: '%n%'
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' oraz '
+      two_words_connector: ! ' i '
+      words_connector: ! ', '
+  time:
+    am: przed południem
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: po południu
+  activerecord:
+    attributes:
+      profile:
+        gitlab_ci_url: "URL do GitLab CI"
+        gitlab_private_token: "Token do GitLab"
+        gitlab_url: "URL do GitLab"
+    models:
+      runners:
+        one: "Runner"
+        other: "Runnery"
+      project:
+        one: "Projekt"
+        other: "Projekty"
+      user:
+        one: "Użytkownik"
+        other: "Użytkownicy"
+      build:
+        one: "Build"
+        other: "Builds"
+      project_branch:
+        one: "Gałąź projektu"
+        other: "Gałęzie projektu"
+      role:
+        one: "Rola"
+        other: "Role"
+      profile: 
+        one: "Profil"
+        other: "Profile"
+    errors:
+      models:
+        profile:
+          attributes:
+            user_id:
+              taken: "Użytkownik może posiadać tylko jeden profil"
+  admin:
+    home:
+      name: Strona główna
+    pagination:
+      previous: "&laquo; Poprzednie"
+      next: "Następne &raquo;"
+    misc:
+      search: "Szukaj"
+      filter: "Filtruj"
+      refresh: "Odśwież"
+      show_all: "Pokaż wszystkie"
+      add_filter: "Dodaj filtr..."
+      bulk_menu_title: "Wybrane pozycje..."
+      remove: "Usuń"
+      add_new: "Dodaj"
+      chosen: "Wybrano %{name}"
+      chose_all: "Wybierz wszystkie"
+      clear_all: "Wyczyść wszystko"
+      up: "Góra"
+      down: "Dół"
+      navigation: "Nawigacja"
+      log_out: "Wyloguj"
+      ago: "temu"
+    flash:
+      successful: "%{name} pomyślnie %{action}"
+      error: "%{name} nie powiodło się %{action}"
+      noaction: "Żadne akcje nie zostały przeprowadzone"
+      model_not_found: "Model '%{model}' nie został znaleziony"
+      object_not_found: "%{model} z ID '%{id}' nie został znaleziony"
+    table_headers:
+      model_name: "Nazwa"
+      last_used: "Ostatnio"
+      records: "Rekordów"
+      username: "Użytkownik"
+      changes: "Zmiany"
+      created_at: "Data/Czas"
+      item: "Pozycja"
+      message: "Wiadomość"
+    actions:
+      charts:
+        title: "Wykresy"
+        breadcrumb: "Wykresy"
+        menu: 'Wykresy'
+      dashboard:
+        title: "Polytene"
+        menu: "Kokpit"
+        breadcrumb: "Kokpit"
+      index:
+        title: "Wyświetl %{model_label_plural}"
+        menu: "Wyświetl"
+        breadcrumb: "%{model_label_plural}"
+      show:
+        title: "Szczegóły dla %{model_label} '%{object_label}'"
+        menu: "Pokaż"
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: "Pokaż na żywo"
+      new:
+        title: "Dodaj %{model_label}"
+        menu: "Dodaj"
+        breadcrumb: "Dodaj"
+        link: "Dodaj %{model_label}"
+        done: "utworzono"
+      edit:
+        title: "Edytuj %{model_label} '%{object_label}'"
+        menu: "Edytuj"
+        breadcrumb: "Edytuj"
+        link: "Edytuj ten %{model_label}"
+        done: "zaktualizowano"
+      delete:
+        title: "Usuń %{model_label} '%{object_label}'"
+        menu: "Usuń"
+        breadcrumb: "Usuń"
+        link: "Usuń '%{object_label}'"
+        done: "usunięto"
+      bulk_delete:
+        title: "Usuń %{model_label_plural}"
+        menu: "Usuń wiele"
+        breadcrumb: "Usuń wiele"
+        bulk_link: "Usunięto zaznaczone %{model_label_plural}"
+      export:
+        title: "Eksportuj %{model_label}"
+        menu: "Eksportuj"
+        breadcrumb: "Eksportuj"
+        link: "Eksportuj %{model_label_plural}"
+        bulk_link: "Esportuj zaznaczone %{model_label_plural}"
+        done: "wyeksportowano"
+      history_index:
+        title: "Historia dla %{model_label_plural}"
+        menu: "Historia"
+        breadcrumb: "Historia"
+      history_show:
+        title: "Historia dla %{model_label} '%{object_label}'"
+        menu: "Historia"
+        breadcrumb: "Historia"
+    form:
+      cancel: "Anuluj"
+      basic_info: "Podstawowe informacje"
+      required: "Wymagane"
+      optional: "Opcjonalne"
+      one_char: "litera"
+      char_length_up_to: "długość do"
+      char_length_of: "długość"
+      save: "Zapisz"
+      save_and_add_another: "Zapisz i dodaj kolejne"
+      save_and_edit: "Zapisz i edytuj"
+      all_of_the_following_related_items_will_be_deleted: "? Następujące powiązane pozycje mogą zostać usunięte lub osierocone:"
+      are_you_sure_you_want_to_delete_the_object: "Jesteś pewien że chcesz usunąć ten %{model_name}"
+      confirmation: "Tak, jestem pewien"
+      delete_confirmation: "Usuń potwierdzenie"
+      bulk_delete: "Następujące obiekty zostaną usunięte, co może usunąć lub osierocić ich powiązane relacje:"
+    export:      
+    confirmation: "Eksportuj do %{name}"
+    select: "Zaznacz pola do eksportu"
+    fields_from: "Pola z %{name}"
+    fields_from_associated: "Pola z asocjacji %{name}"
+    display: "Wyświetl %{name}: %{type}"
+    options_for: "Opcje dla %{name}"
+    empty_value_for_associated_objects: "<puste>"
+    click_to_reverse_selection: 'Kliknij by odwrócić zaznaczenie'
+    csv:
+      header_for_root_methods: "%{name}" # 'model' is available
+      header_for_association_methods: "%{name} [%{association}]"
+      encoding_to: "Koduj do"
+      encoding_to_help: "Wybierz docelowe kodowanie. Zostaw puste by skorzystać by zostawić aktualne kodowanie nietknięte: (%{name})"
+      skip_header: "Brak nagłówka"
+      skip_header_help: "Nie dodawaj nagłówka (brak opisu pól)"
+      default_col_sep: ","
+      col_sep: "Separator kolumny"
+      col_sep_help: "Zostw puste dla domyślnej wartości ('%{value}')" # value is default_col_sep

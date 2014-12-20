@@ -1,0 +1,11 @@
+
+pl:
+  admin:
+    actions:
+      bulk_runners_registering:
+        title: "Rejestracja Runnera"
+        menu: "Rejestracja Runnera"
+        breadcrumb: "Rejestracja Runnera"
+        link: "Rejestracja Runnera"
+        bulk_link: "Rejestracja Runnera dla zaznaczonych projektów"
+        done: "Rejestracja Runnera zakończona"

@@ -1,0 +1,9 @@
+
+pl:
+  admin:
+    actions:
+      project_branch_builds:
+        title: "Kompilacje gałęzi projektu"
+        menu: "Kompilacje gałęzi projektu"
+        breadcrumb: "Kompilacje gałęzi projektu"
+        link: "Kompilacje gałęzi projektu"

@@ -1,0 +1,56 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  notifications:
+    deployment_finished:
+      subject: "[Polytene at %{site_domain}] Deployment of build (%{build_name}) finished with status: %{deployment_status}"
+  hello: "Hello world"
+  admin:
+    actions:
+      dashboard:
+        title: 'Polytene dashboard'
+    home:
+      name: 'Home page'
+  polytene:
+    no_public_builds: 'No public builds yet'
+    public_builds_chart_title: 'Public builds statistics'
+    provide_valid_email: 'Please provide valid email'
+    invite: 'Invite'
+    build_not_valid_for_deployment: 'Build is not valid for deployment. Maybe there is no corresponding ProjectBranch?'
+    no_runner_in_build: "This builds project doesn't have runner assigned"
+    bulk_runners_registering_page_title: 'Choosed runner will be assigned to listed below projects '
+    bulk_runners_registering_choose_runner: 'Choose runner'
+    bulk_runners_registering_no_projects: 'There arent any projects selected'
+    run_deployment_again_btn: "Run again"
+    run_deployment_btn: "Initiate deployment"
+    notices: "Notices"
+    other_places: "Other places"
+    help: 'Help'
+    dashboard: "Dashboard"
+    login: "Sign in"
+    home_page: "Home page"
+    waiting_for_deployment_data: "Waiting for deployment result"
+    profile_not_fully_defined: "Some required fields in profile are empty. Please define them to use all Polytene functionality. Empty fields: %{blank_required_profile_attributes}."
+    no_notices: "no new notifications"
+    no_runners_notice: "You do not have any runners created. Who will do the job?"
+    no_projects_notice: "There aren't any projects imported. Import some in 'Import projects' tab."
+    no_builds_notice: "There aren't any builds in here although there are some projects. Do you remember to activete webhooks in GitlabCI?"

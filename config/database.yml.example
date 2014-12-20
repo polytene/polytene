@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 20
+
+development:
+  <<: *default
+  database: polytene_development
+
+test:
+  <<: *default
+  database: polytene_test
+
+production:
+  <<: *default
+  database: polytene_production
+  username: polytene
+  password: <%= ENV['POLYTENE_DATABASE_PASSWORD'] %>

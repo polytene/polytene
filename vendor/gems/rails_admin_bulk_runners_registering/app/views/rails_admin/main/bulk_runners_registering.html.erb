@@ -1,0 +1,38 @@
+<% if @objects.count > 0 %>
+  <h4><%= t('polytene.bulk_runners_registering_page_title')%></h4>
+  <ul>
+    <% @objects.each do |project|%>
+      <li style="display:block; margin-top:10px">
+      <span class="label">Project</span>
+      <a href="/dashboard/project/<%= project.id %>" class="pjax"><%= project.gitlab_ci_name %></a>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= form_tag bulk_runners_registering_path(model_name: @abstract_model.to_param, bulk_ids: @objects.map(&:id)), method: :put do %>
+
+    <h4><%= t('polytene.bulk_runners_registering_choose_runner')%></h4>
+    <%= select_tag :runner_id, options_from_collection_for_select(@runners, "id", "name"), { include_blank: false } %>
+
+    <h4><%= t('polytene.bulk_runners_registering_register_deploy_key')%></h4>
+    <%= select_tag :register_deploy_key,  options_for_select([[t('locale.boolean.yes'), true], [t('locale.boolean.no'), false]], true), { include_blank: false } %>
+
+    <div class="form-actions">
+      <input type="hidden" value="/dashboard/project" name="return_to">
+
+      <button class="btn btn-primary" data-disable-with="<%= t("admin.form.save") %>" name="_save" type="submit">
+        <i class="icon-white icon-ok"></i>
+        <%= t("admin.form.save") %>
+      </button>
+
+      <button class="btn" data-disable-with="<%= t("admin.form.cancel") %>" name="_continue" type="submit">
+        <i class="icon-remove"></i>
+        <%= t("admin.form.cancel") %>
+      </button>
+    </div>
+  <% end %>
+
+<% else %>
+  <%= t('polytene.bulk_runners_registering_no_projects')%>
+<% end %>
+

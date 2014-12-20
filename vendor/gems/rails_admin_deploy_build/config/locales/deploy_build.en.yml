@@ -1,0 +1,11 @@
+
+en:
+  admin:
+    actions:
+      deploy_build:
+        title: "Deploy Build"
+        menu: "Deploy Build"
+        breadcrumb: "Deploy Build"
+        link: "Deploy Build"
+        bulk_link: "Deploy Build selected %{model_label_plural}"
+        done: "Build deployed"

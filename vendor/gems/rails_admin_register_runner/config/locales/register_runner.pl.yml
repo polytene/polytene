@@ -1,0 +1,10 @@
+
+pl:
+  admin:
+    actions:
+      register_runner:
+        title: "Przypisz Runner"
+        menu: "Przypisz Runner"
+        breadcrumb: "Przypisz Runner"
+        link: "Przypisz Runner"
+        done: "Runner przypisany dla wybranego projektu"

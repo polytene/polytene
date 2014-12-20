@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polytene</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta content='NONE,NOARCHIVE' name='robots'>
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag "rails_admin/rails_admin.css", media: :all %>
+    <%= javascript_include_tag "rails_admin/rails_admin.js" %>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand pjax" href="/" rel="noreferrer">
+            Polytene<small></small>
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav pull-right">
+              <li><a href="/" rel="noreferrer"><%= t('polytene.home_page')%></a></li>
+              <% unless current_user %>
+                <li>
+                <a href="/login" rel="noreferrer"><span class="label label-important"><%= t('polytene.login') %></span></a>
+                </li>
+              <% else %>
+                <li>
+                <a href="/dashboard" rel="noreferrer"><span class="label label-important"><%= t('polytene.dashboard')%></span></a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-left: auto; margin-right: auto; text-align: left; width: 300px; padding-top: 100px;">
+      <%= yield %>
+    </div>
+  </body>
+</html>

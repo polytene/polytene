@@ -1,0 +1,10 @@
+
+pl:
+  admin:
+    actions:
+      invite:
+        title: "Zaproś"
+        menu: "Zaproś"
+        breadcrumb: "Zaproś"
+        link: "Zaproś"
+        done: "Zaproszenie wysłane"

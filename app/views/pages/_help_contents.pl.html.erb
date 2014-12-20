@@ -1,0 +1,65 @@
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Profil</a></li>
+    <li><a href="#tab2" data-toggle="tab">Projekt</a></li>
+    <li><a href="#tab3" data-toggle="tab">Kompilacja</a></li>
+    <li><a href="#tab4" data-toggle="tab">Gałąź projektu</a></li>
+    <li><a href="#tab5" data-toggle="tab">Inne</a></li>
+    <li><a href="#tab6" data-toggle="tab">Runner</a></li>
+    <li><a href="#tab7" data-toggle="tab">Wersja</a></li>
+    <li><a href="#tab8" data-toggle="tab">Jak zacząć</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      Polytene nie korzysta z tych samych danych uwierzytelniających (login, hasło) jak GitLab, stąd aby móc korzystać w pełni z systemu Polytene, musisz zdefiniować wszystkie potrzebne do tego dane profilowe.
+    </div>
+
+    <div class="tab-pane" id="tab2">
+      Projekt do Polytene można zaimportować z GitLab'a. Aby to zrobić należy w pierwszej kolejności zdefiniować wszystkie wymagane dane profilowe, a następnie udać się do karty "Importuj projekty" w sekcji "Projekty".
+    </div>
+
+    <div class="tab-pane" id="tab3">
+      Za racji, że GitLab CI nie posiada w swoim API metody, umożliwiającej pobranie buildów wybranego projektu, jedyną drogą jaką buildy mogą się pojawić w tym systemie są tzw. webhooki. Po zaimportowaniu wybranego projektu z GitLaba, skopiuj wygenerowany dla niego link webhooka i wpisz go w ustawieniach projektu w GitLab CI. Za każdym razem jak pojawi się nowy build w GitLab CI, webhook poinformuje o tym Polytene.
+    </div>
+
+    <div class="tab-pane" id="tab4">
+      Wszystkie parametry operacji deployowanie, są definiowanie w tym obiekcie. Pamiętaj, że każdy build musi mieć odpowiadający obiekt "Gałąź projektu".
+    </div>
+
+    <div class="tab-pane" id="tab5">
+      To jest wersja bardzo wczesna. Wszystko może się posypać w oka mgnieniu. Nie używaj produkcyjnie. I pamiętaj, że mozemy Ci nawet sformatować komputer. Miłej zabawy.
+    </div>
+
+    <div class="tab-pane" id="tab6">
+      Wszystkie Kompilacje są wdrażane przez Runnery (tak jak w przypadku GitlabCI). Aby uruchomić Runnera i zmusić go do pracy należy:
+      <ul>
+        <li>Utworzyć Runner w panelu Polytene.</li>
+        <li>Pobrać kod źródłowy PolyteneRunner`a i zainstalować go najlepiej na osobnej maszynie wg instrukcji.</li>
+        <li>Przy konfiguracji PolyteneRunnera podać prywatny token jaki został nadany utworzonemy w Polytene Runnerowi.</li>
+      </ul>
+    </div>
+
+    <div class="tab-pane" id="tab7">
+      Wersja: <%= Site.version%>
+    </div>
+
+    <div class="tab-pane" id="tab8">
+      <h4>Krok 1</h4>
+      <ul>
+        <li>Utwórz Runnera (<a data-tab-destination="tab6" href="#tab6">Runner</a>)</li>
+        <li>Uruchom PolyteneRunner i połącz go z Runnerem z pkt 1 (<a href="https://github.com/stricte/polytene-runner" target="_BLANK">PolyteneRunner</a>)</li>
+      </ul>
+
+      <br/>
+
+      <h4>Krok 2</h4>
+      <ul>
+        <li>Uaktualnij profil (<a data-tab-destination="tab1" href="#tab1">Profil</a>)</li>
+        <li>Zaimportuj projekty z CI (<a data-tab-destination="tab2" href="#tab2">Projekt</a>)</li>
+        <li>Zaktualizuj WebHooki dla zaimportowanych projektów w CI (<a data-tab-destination="tab3" href="#tab3">Kompilacja</a>)</li>
+        <li>Utwórz definicje gałęzi projektów (<a data-tab-destination="tab4" href="#tab4">Gałąź projektu</a>)</li>
+        <li>Czekaj na pierwszą kompilację pochodzącą z CI</li>
+      </ul>
+    </div>
+  </div>
+</div>

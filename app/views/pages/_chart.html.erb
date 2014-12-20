@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  $(function () {
+    var chart;
+    $(document).ready(function() {
+      chart = new Highcharts.Chart({
+        chart: {
+          renderTo: 'growth_rate'
+        },
+        title: {
+          text: '<%= t("polytene.public_builds_chart_title")%>'
+        },
+        yAxis:{
+          title: {
+            text: 'Builds count'
+          }
+        },
+        xAxis: {
+          title: {
+            text: 'Day'
+          },
+          labels: {
+            rotation: -90,
+            align: 'right'
+          },
+          type: 'datetime',
+          dateTimeLabelFormats: {
+            day: '%d-%m-%Y',
+          }
+        },
+        series: <%=raw @public_builds.graph_data((30.days.ago)).to_json %>
+    });
+    });
+  });
+</script>

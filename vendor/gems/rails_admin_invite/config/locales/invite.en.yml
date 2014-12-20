@@ -1,0 +1,10 @@
+
+en:
+  admin:
+    actions:
+      invite:
+        title: "Invite"
+        menu: "Invite"
+        breadcrumb: "Invite"
+        link: "Invite"
+        done: "Invitation sent"

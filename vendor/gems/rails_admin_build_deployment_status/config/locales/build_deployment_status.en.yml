@@ -1,0 +1,11 @@
+
+en:
+  admin:
+    actions:
+      build_deployment_status:
+        title: "Build Deployment Status"
+        menu: "Build Deployment Status for %{model_label} '%{object_label}'"
+        breadcrumb: "Build Deployment Status"
+        link: "Build Deployment Status"
+        bulk_link: "Build Deployment Status selected %{model_label_plural}"
+        done: "Build Deployment Statused"

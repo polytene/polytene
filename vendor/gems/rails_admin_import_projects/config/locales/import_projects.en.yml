@@ -1,0 +1,11 @@
+
+en:
+  admin:
+    actions:
+      import_projects:
+        title: "Import Projects"
+        menu: "Import Projects"
+        breadcrumb: "Import Projects"
+        link: "Import Projects"
+        bulk_link: "Import Projects selected %{model_label_plural}"
+        done: "Projects imported"

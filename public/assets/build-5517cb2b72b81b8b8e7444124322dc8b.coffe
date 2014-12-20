@@ -1,0 +1,25 @@
+class Build
+  @interval: null
+
+  constructor: (build_url, build_status) ->
+    clearInterval(Build.interval)
+
+    if build_status == "running"
+      #
+      # Check for new build output if user still watching build page
+      # Only valid for runnig build when output changes during time
+      #
+      Build.interval = setInterval =>
+        if window.location.href is build_url
+          $.ajax
+            url: build_url
+            dataType: "json"
+            success: (build) =>
+              if build.deployment_status == "running"
+                $('#stdout-tracer').html build.stdout_deployment_trace
+                $('#stderr-tracer').html build.stderr_deployment_trace
+              else
+                Turbolinks.visit build_url
+      , 4000
+
+@Build = Build

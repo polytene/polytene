@@ -1,0 +1,11 @@
+
+en:
+  admin:
+    actions:
+      bulk_runners_registering:
+        title: "Bulk Runners Registering"
+        menu: "Bulk Runners Registering for %{model_label} '%{object_label}'"
+        breadcrumb: "Bulk Runners Registering"
+        link: "Bulk Runners Registering"
+        bulk_link: "Bulk Runners Registering selected %{model_label_plural}"
+        done: "Assigned to selected runner"

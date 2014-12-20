@@ -1,0 +1,68 @@
+<div class="row-fluid show-grid">
+  <div id="trace-container" class="span8">
+    <div id="stderr-trace-container" style="margin-bottom: 10px; background-color: #303030; color: white; padding: 20px; max-height: 400px; overflow-y: auto;">
+      STDERR:<br/>
+
+      <pre style="font-size: 11px;" class="trace-body" id="trace-body-stderr"><%= @object.deployment_trace("error").html_safe%></pre>
+
+      <% if @object.deployment_pending? %>
+        <%= t('polytene.waiting_for_deployment_data')%><span class="dots"></span>
+      <% end %>
+    </div>
+
+    <div id="stdout-trace-container" style="background-color: #303030; color: white; padding: 20px; max-height: 400px; overflow-y: auto;">
+      STDOUT:<br/>
+
+      <pre style="font-size: 11px;" class="trace-body" id="trace-body-stdout"><%= @object.deployment_trace.html_safe%></pre>
+
+      <% if @object.deployment_pending? %>
+        <%= t('polytene.waiting_for_deployment_data')%><span class="dots"></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="span4" style="background-color: #F9F7F7; padding-left: 20px; padding-top: 20px;">
+    <div>
+      <dl class="dl-horizontal">
+        <dt>Build status</dt>
+        <dd><%= build_status(@object.status) %></dd>
+
+        <dt>Build started_at</dt>
+        <dd><%= @object.started_at.try(:to_s, :db)%></dd>
+
+        <dt>Build finished_at</dt>
+        <dd><%= @object.finished_at.try(:to_s, :db)%></dd>
+      </dl>
+
+      <dl class="dl-horizontal" style="margin-top: 10px;">
+        <dt>Deployment status</dt>
+        <dd><%= deployment_status_badge(@object.deployment_status)%></dd>
+
+        <dt>Deployment started_at</dt>
+        <dd><%= @object.deployment_started_at.try(:to_s, :db) %></dd>
+
+        <dt>Deployment finished_at</dt>
+        <dd><%= @object.deployment_finished_at.try(:to_s, :db) %></dd>
+      </dl>
+
+      <dl class="dl-horizontal" style="margin-top: 10px;">
+        <dt>Branch</dt>
+        <dd><%= @object.ref%></dd>
+
+        <dt>SHA</dt>
+        <dd><%= @object.short_sha %></dd>
+      </dl>
+
+    </div>
+
+    <div style="text-align: left;">
+      <%= deployment_form(@object, deploy_build_path)%>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  new Dots('dots', 30, 600, "<%= @object.deployment_status %>");
+  new Build("<%= deploy_build_path %>", "<%= @object.deployment_status %>", "<%= '/dashboard/build/' + @object.id.to_s + '/build_deployment_status.json' %>");
+</script>

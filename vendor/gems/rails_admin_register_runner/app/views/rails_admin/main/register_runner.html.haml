@@ -1,0 +1,21 @@
+= form_tag(nil, method: "put", multipart: true, class: "form-horizontal denser") do |form|
+  = content_tag(:div, class: "form-group control-group select_type select_field #{'error' if @object.errors.present? && @object.errors.has_key?(:runner_id)}") do
+    = label('runner_id', 'Runner', class: 'col-sm-2 control-label')
+    = content_tag(:div, class: 'col-sm-10 controls') do
+      = select_tag "runner_id", options_from_collection_for_select(@runners, "id", "name", @object.runner_id)
+      = content_tag(:span, @object.errors.get(:runner_id).to_sentence, class: 'help-inline text-danger') if @object.errors.present? && @object.errors.has_key?(:runner_id)
+  = content_tag(:div, class: "form-group control-group select_type select_field") do
+    = label('register_deploy_key', 'Register deploy key in GitLab?', class: 'col-sm-2 control-label')
+    = content_tag(:div, class: 'col-sm-10 controls') do
+      = select_tag :register_deploy_key,  options_for_select([[t('locale.boolean.yes'), true], [t('locale.boolean.no'), false]], true), { include_blank: false }
+
+  %input{type: :hidden, name: 'return_to', value: (params[:return_to].presence || request.referer)}
+  %br
+  .form-actions
+    %button.btn.btn-primary{type: "submit", name: "_save", :'data-disable-with' => t("admin.form.save")}
+      %i.icon-white.icon-ok
+      = t("admin.form.save")
+    %span.extra_buttons
+      %button.btn{type: "submit", name: "_continue", :'data-disable-with' => t("admin.form.cancel")}
+        %i.icon-remove
+        = t("admin.form.cancel")

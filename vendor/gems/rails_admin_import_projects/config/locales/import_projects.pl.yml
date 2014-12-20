@@ -1,0 +1,11 @@
+
+pl:
+  admin:
+    actions:
+      import_projects:
+        title: "Importuj projekty"
+        menu: "Importuj projekty"
+        breadcrumb: "Importuj projekty"
+        link: "Importuj projekty"
+        bulk_link: "Importuj zaznaczone projekty %{model_label_plural}"
+        done: "Projekty zostały zaimportowane"

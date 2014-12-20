@@ -1,0 +1,34 @@
+<h3><%= t('polytene.import_projects_header') %></h3>
+
+<% if @gitlab_ci_projects %>
+<table class="gitlab_ci_projects table table-striped table-condensed">
+  <thead>
+    <tr><th><%= t('polytene.name')%></th><th>GitLab Url</th><th><%= t('polytene.if_imported')%></th><th>--</th></tr>
+  </thead>
+
+  <tbody>
+    <% @gitlab_ci_projects.each do |gitlab_ci_project|%>
+      <% imported = Project.gitlab_ci_project_exists?(gitlab_ci_project['id'], current_user.id) %>
+      <% lbl = imported ? t('polytene.delete_project') : t('polytene.import_project')%>
+      <% cls = imported ? "btn pjax" : "btn btn-primary pjax"%>
+
+      <tr>
+        <td><%= gitlab_ci_project['name']%></td>
+        <td><a target="_blank" href="<%= gitlab_ci_project['gitlab_url']%>"><%= gitlab_ci_project['gitlab_url']%></a></td>
+        <td><%= imported.humanize%></td>
+        <td style="width: 100px; text-align: right;">
+          <%= link_to lbl, import_projects_path(:gitlab_ci_project_id => gitlab_ci_project['id']), {:class => cls, :method => "POST"}%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  <div class="wall">
+    <%= t('polytene.no_projects_to_import')%>
+    <% if current_user.blank_required_profile_attributes.size != 0%>
+      <br/>
+      <%= t('polytene.profile_not_fully_defined', blank_required_profile_attributes: current_user.blank_required_profile_attributes.map{|b| Profile.human_attribute_name(b)}.join(', ')) %>
+    <% end %>
+  </div>
+<% end %>

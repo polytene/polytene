@@ -1,0 +1,8 @@
+= form_tag(nil, method: "post", multipart: true, class: "form-horizontal denser") do |form|
+  = content_tag(:div, class: "form-group control-group string_type email_field #{'error' if @error.present?}") do
+    = label('email', 'Email', class: 'col-sm-2 control-label')
+    = content_tag(:div, class: 'col-sm-10 controls') do
+      = text_field_tag 'email', nil, class: 'form-control'
+      = content_tag(:span, @error, class: 'help-inline text-danger') if @error.present?
+
+  = render(partial: 'rails_admin/main/submit_buttons')

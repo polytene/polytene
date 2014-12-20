@@ -1,0 +1,76 @@
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Profile</a></li>
+    <li><a href="#tab2" data-toggle="tab">Build</a></li>
+    <li><a href="#tab3" data-toggle="tab">Project Branch</a></li>
+    <li><a href="#tab4" data-toggle="tab">License</a></li>
+    <li><a href="#tab5" data-toggle="tab">Project</a></li>
+    <li><a href="#tab6" data-toggle="tab">Runner</a></li>
+    <li><a href="#tab7" data-toggle="tab">Version</a></li>
+    <li><a href="#tab8" data-toggle="tab">How to start</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      Unlike to the GitLab-CI, Polytene doesn't require the same authentication data (login, password) used in GitLab. To use all Polytene functionality you must fill all your profile fields instead:
+      <ul>
+        <li><b>Gitlab url</b> - Polytene need to know about Gitlab instance. Will clone repos from there.</li>
+        <li><b>Gitlab ci url</b> - Polytene need to know about GitlabCI instance. Will import projects from there.</li>
+        <li><b>Gitlab private token</b> - Polytene need to know about this token because of repo cloning privileges.</li>
+      </ul>
+    </div>
+
+    <div class="tab-pane" id="tab2">
+      All Builds in Polytene are created by the action of GitLab-CI webhooks. So remember to update webhook url, in GitLab-CI after project import. Webhook url can be obtained in Polytene Project details page.
+    </div>
+
+    <div class="tab-pane" id="tab3">
+      All deployment variables can be defined in branch context of specified Project. Due to this, remeber that every build must have corresponding Project Branch created.
+    </div>
+
+    <div class="tab-pane" id="tab4">
+      Copyright (c) 2014-2015 Mariusz Michalak
+      <br/><br/>
+      Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+      <br/><br/>
+      The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+      <br/><br/>
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    </div>
+
+    <div class="tab-pane" id="tab5">
+      Projects in Polytene can be imported from GitLab-CI server using his API. To do it, fill all necessary fields in your Profile. Next use "Import Projects" tab in "Projects" section.
+    </div>
+
+    <div class="tab-pane" id="tab6">
+      In Polytene, in similarity to GitlabCI, exists Runner object. Runner do the job. If you want to make everything up and running, follow this steps:
+      <ul>
+        <li>Create Runner object in Polytene panel.</li>
+        <li>Pick source code of PolyteneRunner from Github and install it on separate machine according to the manual.</li>
+        <li>While configuring installed PolyteneRunner use generated private token from created in Polytene Runner object.</li>
+      </ul>
+    </div>
+
+    <div class="tab-pane" id="tab8">
+      <h4>Step 1</h4>
+      <ul>
+        <li>Create Runner (<a data-tab-destination="tab6" href="#tab6">Runner</a>)</li>
+        <li>Start PolyteneRunner and link it with your Runner (<a href="https://github.com/stricte/polytene-runner" target="_BLANK">PolyteneRunner</a>)</li>
+      </ul>
+
+      <br/>
+
+      <h4>Step 2</h4>
+      <ul>
+        <li>Update your profile (<a href="#tab1" data-tab-destination="tab1">Profile</a>)</li>
+        <li>Import projects from GitLab CI (<a href="#tab5" data-tab-destination="tab5">Project</a>)</li>
+        <li>Set WebHooks for imported projects in CI (<a href="#tab2" data-tab-destination="tab2">Build</a>)</li>
+        <li>Create and configure ProjectBranches (<a href="#tab3" data-tab-destination="tab3">ProjectBranch</a>)</li>
+        <li>Wait for your first Build from CI</li>
+      </ul>
+    </div>
+
+    <div class="tab-pane" id="tab7">
+      Version: <%= Site.version%>
+    </div>
+</div>
+</div>

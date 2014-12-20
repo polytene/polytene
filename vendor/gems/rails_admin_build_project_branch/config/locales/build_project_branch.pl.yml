@@ -1,0 +1,9 @@
+
+pl:
+  admin:
+    actions:
+      build_project_branch:
+        title: "Gałąź projektu"
+        menu: "Gałąź projektu"
+        breadcrumb: "Gałąź projektu"
+        link: "Gałąź projektu"

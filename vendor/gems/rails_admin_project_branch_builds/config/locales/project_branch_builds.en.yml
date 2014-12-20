@@ -1,0 +1,9 @@
+
+en:
+  admin:
+    actions:
+      project_branch_builds:
+        title: "Project Branch Builds"
+        menu: "Project Branch Builds"
+        breadcrumb: "Project Branch Builds"
+        link: "Project Branch Builds"
