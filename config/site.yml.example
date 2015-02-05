@@ -1,0 +1,18 @@
+# config/site.yml
+
+defaults: &defaults
+  title: Polytene
+  domain: cd.example.org
+  version: '0.0.1'
+
+production:
+  <<: *defaults
+  base_email: polytene@cd.example.org
+
+development:
+  <<: *defaults
+  base_email: polytene@cd.example.org
+
+test:
+  <<: *defaults
+  base_email: polytene@cd.exmple.org
