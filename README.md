@@ -58,7 +58,7 @@ As was mentioned above all depends on three stages based on GitLab. The simplest
     * Configure desired project branch (Each build from CI belongs to specific project branch, so entire configuration needed for deployment is in Polytene project branch context)
           * Set deployment mode: manual or auto
           * Write deployment script (anything can be used: capistrano, ansible, etc.)
-    * Add WebHook url to CI (CI sends information about new finished build by WebHooks functionality. Url for WebHook can be obtained in project's details page in Polytene)
+    * WebHook in CI should be created after project import. If not add WebHook url to CI manually (CI sends information about new finished build by WebHooks functionality. Url for WebHook can be obtained in project's details page in Polytene)
     * Wait for the first build
 
 ### Polytene-Runner ###
