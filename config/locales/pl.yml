@@ -29,6 +29,8 @@ pl:
     no_projects_notice: "Nie zaimportowałeś żadnych projektów. Możesz to zrobić w karcie 'Importuj projekty'"
     no_runners_notice: "Nie utworzyłeś żadnych runnerów. Kto ma wykonywać całą pracę?"
     no_builds_notice: "Wygląda na to, że nie ma żadnych buildów, chociaż zaimportowałeś już jakieś projekty. Pamiętasz aby aktywować webhooki w GitlabCI?"
+    gitlab_ci_webhook_cannot_be_created: "Nie udało się utworzyć webhooka w Gitlab CI. Dodaj go ręcznie."
+    error_while_project_import: "Nie udało się zaimportować projektu z Gitlab CI. Spróbuj ponownie lub sprawdź logi."
   locale:
     boolean:
       yes: "Tak"

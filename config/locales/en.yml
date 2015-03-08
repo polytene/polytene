@@ -54,3 +54,5 @@ en:
     no_runners_notice: "You do not have any runners created. Who will do the job?"
     no_projects_notice: "There aren't any projects imported. Import some in 'Import projects' tab."
     no_builds_notice: "There aren't any builds in here although there are some projects. Do you remember to activete webhooks in GitlabCI?"
+    gitlab_ci_webhook_cannot_be_created: "Gitlab CI Webhook can not be registered. Add it manually."
+    error_while_project_import: "Gitlab CI project can not be imported. Try again or consult logs."

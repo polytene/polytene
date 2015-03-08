@@ -71,13 +71,18 @@ class Project < ActiveRecord::Base
     project.gitlab_id = params['gitlab_id']
     project.user_id = user_id
 
-    project.save
+    if project.save
+      project
+    else
+      nil
+    end
   end
 
   def self.import_gitlab_ci_project(gitlab_ci_project_id, user_id)
     gitlab_ci_project = self.find_gitlab_ci_project(gitlab_ci_project_id, user_id)
 
-    self.create_gitlab_ci_project(gitlab_ci_project, user_id) if gitlab_ci_project
+    return nil unless gitlab_ci_project
+    self.create_gitlab_ci_project(gitlab_ci_project, user_id)
   end
 
   def self.gitlab_ci_project_exists?(id, user_id)
@@ -127,8 +132,26 @@ class Project < ActiveRecord::Base
     end
   end
 
-  private
+  def register_webhook
+    profile = user.profile
 
+    options = {:headers => {"Content-Type" => "application/json"}, :query => {
+      :private_token => profile.gitlab_private_token,
+      :url => profile.gitlab_url,
+      :web_hook => gitlab_ci_build_webhook_url}
+    }
+
+    endpoint = File.join(profile.base_gitlab_ci_api_url, 'projects', gitlab_ci_id.to_s, 'webhooks')
+    response = HTTParty.post(endpoint, options)
+
+    if response.code == 201
+      true
+    else
+      nil
+    end
+  end
+
+  private
   def create_branches
     self.gitlab_ci_default_ref.split(",").map{|d| d.strip}.reject(&:blank?).each do |branch_name|
       self.project_branches.create({:branch_name => branch_name, :deployment_notification_email_recipients => self.user.email})

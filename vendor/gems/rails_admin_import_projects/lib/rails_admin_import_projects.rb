@@ -28,10 +28,17 @@ module RailsAdmin
                 authorize! :destroy, project
                 project.destroy
               else
-                Project.import_gitlab_ci_project(params[:gitlab_ci_project_id], current_user.id)
+                project = Project.import_gitlab_ci_project(params[:gitlab_ci_project_id], current_user.id)
+                if project
+                  unless project.register_webhook
+                    alert = t('polytene.gitlab_ci_webhook_cannot_be_created')
+                  end
+                else
+                  alert = t('polytene.error_while_project_import')
+                end
               end
 
-              redirect_to import_projects_url
+              redirect_to import_projects_url, alert: alert
             else
               @gitlab_ci_projects = current_user.avaiable_gitlab_ci_projects if current_user.blank_required_profile_attributes.size == 0
             end
