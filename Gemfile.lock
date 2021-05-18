@@ -7,55 +7,55 @@ GIT
       rails (> 3.1.3)
 
 PATH
-  remote: ./vendor/gems/rails_admin_build_deployment_status/
+  remote: vendor/gems/rails_admin_build_deployment_status
   specs:
     rails_admin_build_deployment_status (0.0.1)
       rails (~> 4.1.6)
 
 PATH
-  remote: ./vendor/gems/rails_admin_build_project_branch/
+  remote: vendor/gems/rails_admin_build_project_branch
   specs:
     rails_admin_build_project_branch (0.0.1)
       rails (~> 4.1.6)
 
 PATH
-  remote: ./vendor/gems/rails_admin_bulk_runners_registering/
+  remote: vendor/gems/rails_admin_bulk_runners_registering
   specs:
     rails_admin_bulk_runners_registering (0.0.1)
       rails (~> 4.1.6)
 
 PATH
-  remote: ./vendor/gems/rails_admin_deploy_build/
+  remote: vendor/gems/rails_admin_deploy_build
   specs:
     rails_admin_deploy_build (0.0.1)
       rails (~> 4.1.6)
 
 PATH
-  remote: ./vendor/gems/rails_admin_import_projects/
+  remote: vendor/gems/rails_admin_import_projects
   specs:
     rails_admin_import_projects (0.0.1)
       rails (~> 4.1.6)
 
 PATH
-  remote: ./vendor/gems/rails_admin_invite/
+  remote: vendor/gems/rails_admin_invite
   specs:
     rails_admin_invite (0.0.1)
       rails (~> 4.1.6)
 
 PATH
-  remote: ./vendor/gems/rails_admin_password_edit/
+  remote: vendor/gems/rails_admin_password_edit
   specs:
     rails_admin_password_edit (0.0.1)
       rails (~> 4.1.6)
 
 PATH
-  remote: ./vendor/gems/rails_admin_project_branch_builds/
+  remote: vendor/gems/rails_admin_project_branch_builds
   specs:
     rails_admin_project_branch_builds (0.0.1)
       rails (~> 4.1.6)
 
 PATH
-  remote: ./vendor/gems/rails_admin_project_builds/
+  remote: vendor/gems/rails_admin_project_builds
   specs:
     rails_admin_project_builds (0.0.1)
       rails (~> 4.1.6)
@@ -247,14 +247,15 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
-    mini_portile (0.6.0)
+    mini_portile2 (2.5.1)
     minitest (5.4.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     nested_form (0.3.2)
     netrc (0.8.0)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
+    nokogiri (1.11.4)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     paper_trail (3.0.6)
       activerecord (>= 3.0, < 5.0)
@@ -270,6 +271,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    racc (1.5.2)
     rack (1.5.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
